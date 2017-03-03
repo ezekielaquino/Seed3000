@@ -13,21 +13,26 @@ var imagemin = require('gulp-imagemin');
 var replace = require('gulp-replace');
 var htmlreplace = require('gulp-html-replace');
 
+// Source paths, we watch and compile/compress
+// files from these directories
 var paths = {
   html: './source/twig/**/*.html',
   stylus: './source/stylus/**/*.styl',
   images: './source/images/**/*'
 }
 
+// This is where our compiled and Compressed
+// files are outputted / "piped" to
 var dest = {
   build: './',
-  assets: './assets',
   images: './assets/img'
 }
 
+// Let's compile our html, you can work with
+// Twig if you prefer or just go vanilla
 gulp.task('compile-html', function() {
   return gulp.src(paths.html)
-    .pipe(plumber())
+    .pipe(plumber()) // plumber handles errors for us
     .pipe(twig())
     .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
     .pipe(gulpif(argv.dev, replace('images/', 'source/images/')))
@@ -41,7 +46,8 @@ gulp.task('compile-html', function() {
   });
 });
 
-
+// Compile our stylsheets, you can use stylus
+// if you prefer or just go vanilla
 gulp.task('compile-stylus', function() {
   var options = {
     use: [rupture(), autoprefixer()],
@@ -62,7 +68,7 @@ gulp.task('compile-stylus', function() {
   });
 });
 
-
+// Compress and optimise images (only in prod)
 gulp.task('compress-images', function() {
   return gulp.src(paths.images)
     .pipe(plumber())
@@ -74,7 +80,7 @@ gulp.task('compress-images', function() {
   });
 });
 
-
+// Watch our files for changes
 gulp.task('watch', function() {
   gulp.watch(paths.html, ['compile-html']);
   gulp.watch(paths.stylus, ['compile-stylus']);
