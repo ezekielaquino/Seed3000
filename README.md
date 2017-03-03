@@ -35,6 +35,10 @@ A) Install yarn (https://yarnpkg.com/lang/en/) `npm install -g yarn`
 
 4. Start coding
 
+5. When you're ready to deploy, just run `npm run prod`, this minifies/compresses/use all html/css/images
+
+* Constantly a [WIP]
+
 
 ## Say hi!
 The is completely free but I'd love to know if you have found it useful or improved it in any way! Drop me a line at ezekielaquino@gmail.com or via @the_ezekiel on Twitter!
