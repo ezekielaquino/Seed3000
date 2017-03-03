@@ -28,7 +28,8 @@ gulp.task('compile-html', function() {
   return gulp.src(paths.html)
     .pipe(twig())
     .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
-    .pipe(gulpif(argv.prod, replace('/source/images/', '/assets/img')))
+    .pipe(gulpif(argv.dev, replace('images/', 'source/images/')))
+    .pipe(gulpif(argv.prod, replace('images/', 'assets/img/')))
     .pipe(gulpif(argv.prod, htmlreplace({ css: 'style.min.css' })))
     .pipe(gulp.dest(dest.build))
 
@@ -48,7 +49,8 @@ gulp.task('compile-stylus', function() {
   return gulp.src('./source/stylus/style.styl')
     .pipe(stylus(options))
     .pipe(gulpif(argv.prod, rename('style.min.css')))
-    .pipe(gulpif(argv.prod, replace('/source/images/', '/assets/img/')))
+    .pipe(gulpif(argv.dev, replace('images/', 'source/images/')))
+    .pipe(gulpif(argv.prod, replace('images/', 'assets/img/')))
     .pipe(gulp.dest('./'))
 
   .on('end', function() {
