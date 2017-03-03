@@ -46,8 +46,8 @@ A) Install yarn (https://yarnpkg.com/lang/en/) `npm install -g yarn`
 
 * Constantly a [WIP]
 
-**Notes on images:
-Put all image image assets in source/images. When using images in html/css while in dev just use `images/**/**.xxx` as the src. It will be automatically be changed to `sources/images/**/filename` (when in dev) or `assets/img/**/filename` (in prod). Forget about paths, Just... `images`.
+**Notes on images:**
+Put all image image assets in source/images. When using images in html/css while in dev just use `images/**/filename.xxx` as the src. It will be automatically be changed to `sources/images/**/filename` (when in dev) or `assets/img/**/filename` (in prod). Forget about paths, Just... `images`.
 
 ## Say hi!
 The is completely free but I'd love to know if you have found it useful or improved it in any way! Drop me a line at ezekielaquino@gmail.com or via @the_ezekiel on Twitter!
