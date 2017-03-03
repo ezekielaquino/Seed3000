@@ -3,6 +3,7 @@ var gulpif = require('gulp-if');
 var rename = require('gulp-rename');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+var plumber = require('gulp-plumber');
 var twig = require('gulp-twig');
 var stylus = require('gulp-stylus');
 var rupture = require('rupture');
@@ -26,6 +27,7 @@ var dest = {
 
 gulp.task('compile-html', function() {
   return gulp.src(paths.html)
+    .pipe(plumber())
     .pipe(twig())
     .pipe(gulpif(argv.prod, htmlmin({ collapseWhitespace: true })))
     .pipe(gulpif(argv.dev, replace('images/', 'source/images/')))
@@ -47,6 +49,7 @@ gulp.task('compile-stylus', function() {
   };
 
   return gulp.src('./source/stylus/style.styl')
+    .pipe(plumber())
     .pipe(stylus(options))
     .pipe(gulpif(argv.prod, rename('style.min.css')))
     .pipe(gulpif(argv.dev, replace('images/', 'source/images/')))
@@ -62,6 +65,7 @@ gulp.task('compile-stylus', function() {
 
 gulp.task('compress-images', function() {
   return gulp.src(paths.images)
+    .pipe(plumber())
     .pipe(imagemin())
     .pipe(gulp.dest(dest.images))
 
