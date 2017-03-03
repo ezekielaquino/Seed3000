@@ -8,7 +8,8 @@
   "license": "MIT",
   "dependencies": {
     "gulp-html-replace": "^1.6.2",
-    "gulp-replace": "^0.5.4"
+    "gulp-replace": "^0.5.4",
+    "marquee3000": "^0.0.2"
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.13.0",

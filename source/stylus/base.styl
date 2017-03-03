@@ -1,13 +1,36 @@
 html {
+  width: 100%;
+  height: 100%;
   font-size: 60px;
+
+  +below(600px) {
+    font-size: 32px;
+  }
 }
 
 body {
-  font-family: 'Arial';
+  height: 100%;
+  font-family: 'Baskerville', 'Times New Roman', Times, serif;
   background: url('images/met-bg.jpg') no-repeat center center / cover;
 }
 
 h2 {
-  font-family: 'Comic Sans', 'Chalkboard', serif;
   font-weight: bold;
+  display: inline-block;
 }
+
+p {
+  display: inline-block;
+}
+
+.what {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.marquee3k {
+  border-bottom: 4px solid #FF3C0D;
+}
+
+
