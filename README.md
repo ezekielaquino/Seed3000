@@ -51,7 +51,7 @@ A) Install yarn (https://yarnpkg.com/lang/en/) `npm install -g yarn`
 - Be stylish with your CSS via Stylus (http://stylus-lang.com/)
 - HTML? You can also do Twig when you make templates! (http://twig.sensiolabs.org/)
 - Rupture makes meida queries super clean and easy (https://github.com/jescalan/rupture)
-  `
+  ```
     // In stylus– note the nesting
     .some-div {
       position: absolute;
@@ -64,7 +64,7 @@ A) Install yarn (https://yarnpkg.com/lang/en/) `npm install -g yarn`
         height: 100px;
       }
     }
-  `
+  ```
 - ES6! Use arrow functions and all that new syntax jazz
 
 
