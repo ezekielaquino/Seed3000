@@ -46,6 +46,28 @@ A) Install yarn (https://yarnpkg.com/lang/en/) `npm install -g yarn`
 
 * Constantly a [WIP]
 
+## Plugs for the plugins included
+
+- Be stylish with your CSS via Stylus (http://stylus-lang.com/)
+- HTML? You can also do Twig when you make templates! (http://twig.sensiolabs.org/)
+- Rupture makes meida queries super clean and easy (https://github.com/jescalan/rupture)
+  `
+    // In stylus– note the nesting
+    .some-div {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+
+      // see how clean and easy, see docs on usage!
+      +below(600px) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  `
+- ES6! Use arrow functions and all that new syntax jazz
+
+
 **Notes on images:**
 Put all image image assets in source/images. When using images in html/css while in dev just use `images/**/filename.xxx` as the src. It will be automatically be changed to `sources/images/**/filename` (when in dev) or `assets/img/**/filename` (in prod). Forget about paths, Just... `images`.
 
