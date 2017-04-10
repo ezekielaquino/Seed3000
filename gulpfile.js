@@ -16,7 +16,7 @@ var htmlreplace = require('gulp-html-replace');
 // Source paths, we watch and compile/compress
 // files from these directories
 var paths = {
-  html: 'source/twig/**/*.html',
+  html: 'source/twig/**/*.twig',
   stylus: 'source/stylus/**/*.styl',
   images: './source/images/**/*'
 }
