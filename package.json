@@ -35,7 +35,7 @@
     "webpack:prod": "webpack --optimize-minimize",
     "gulp": "gulp dev --dev",
     "gulp:prod": "gulp prod --prod",
-    "browsersync": "browser-sync start --server --port 3007 --files '**/*.css' '**/*.js' '**/*.twig'",
+    "browsersync": "browser-sync start --server --port 3007 --files '**/*.css' '**/*.js' '**/*.html'",
     "dev": "npm run webpack & npm run gulp & npm run browsersync",
     "prod": "npm run webpack:prod & npm run gulp:prod"
   }
